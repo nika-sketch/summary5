@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etInputInfo"
+        android:layout_width="411dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="61dp"-->
+<!--        android:layout_height="42dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/etInputInfo"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/etInputInfo"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/etInputInfo"-->
+<!--        tools:srcCompat="@tools:sample/avatars" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
