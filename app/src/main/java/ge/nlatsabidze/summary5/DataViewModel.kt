@@ -4,13 +4,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
-import org.json.JSONObject
 
 class DataViewModel : ViewModel() {
 
     private var _parsedJson = MutableLiveData<UserData>()
     val parsedJson: LiveData<UserData>
         get() = _parsedJson
+
+    private var _mapOfItems = MutableLiveData<MutableMap<Int, String>>()
+    val mapOfItems: LiveData<MutableMap<Int, String>>
+        get() = _mapOfItems
 
     private val jsonObject =
         "[ \n" +

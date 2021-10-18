@@ -6,13 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ge.nlatsabidze.summary5.databinding.CardviewLayoutBinding
 
-class CardViewAdapter(private val data: UserData): RecyclerView.Adapter<CardViewAdapter.EditTextFolder>() {
+class CardViewAdapter(private val viewModel: DataViewModel, private val data: UserData): RecyclerView.Adapter<CardViewAdapter.EditTextFolder>() {
 
     inner class EditTextFolder(private val binding: CardviewLayoutBinding):RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(item: UserData.DataSubList) {
             binding.rv.layoutManager = LinearLayoutManager(binding.root.context)
-            binding.rv.adapter = CardViewItemAdapter(item)
+            binding.rv.adapter = CardViewItemAdapter(viewModel, item)
         }
     }
 

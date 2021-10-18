@@ -2,10 +2,10 @@ package ge.nlatsabidze.summary5
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import ge.nlatsabidze.summary5.databinding.FragmentRegisterBinding
@@ -16,7 +16,6 @@ class RegisterFragment : Fragment() {
 
     private lateinit var adapter: CardViewAdapter
 
-
     private val viewModel: DataViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -25,7 +24,6 @@ class RegisterFragment : Fragment() {
     ): View? {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         viewModel.parseJson()
-        Log.d("tag", "${viewModel.parsedJson.value}")
 
         init()
         return binding?.root
@@ -33,9 +31,14 @@ class RegisterFragment : Fragment() {
 
     private fun init() {
 
-        adapter = CardViewAdapter(viewModel.parsedJson.value!!)
+        adapter = CardViewAdapter(viewModel, viewModel.parsedJson.value!!)
         binding?.rv?.adapter = adapter
         binding?.rv?.layoutManager = LinearLayoutManager(context)
 
+        binding!!.btnRegister.setOnClickListener {
+            viewModel.mapOfItems.observe(viewLifecycleOwner, {
+                Log.d("tag", it.toString())
+            })
+        }
     }
 }
